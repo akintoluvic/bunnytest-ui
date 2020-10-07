@@ -10,7 +10,7 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-light">
       <Navbar />
       <Container>
       <Switch>

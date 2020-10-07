@@ -3,39 +3,24 @@ import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Nav from 'react-bootstrap/Nav'
 import Task from './Task'
+import TaskSwitch from './TaskSwitch'
 
 const Tasks = () => {
     return (
         <>
-        <div>Tasks</div>
-        <Card>
-            <Card.Header>
-                <Nav variant="tabs" defaultActiveKey="#first">
-                    <Nav.Item>
-                        <Nav.Link href="#first">Active</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="#link">Link</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="#disabled" disabled>
-                            Disabled
-                        </Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </Card.Header>
-            <Card.Body className="">
-                <Row className="flex flex-col md:flex-row">
+            
+            <Row className="mt-5 mb-4 flex flex-row flex-wrap justify-content-between align-items-center">
+                <h3>All Tasks</h3>
+                <TaskSwitch />
+            </Row>
+            <Row className="flex flex-row flex-wrap px-auto">
                     <Task />
                     <Task />
                     <Task />
                     <Task />
                     <Task />
                     <Task />
-                
-                </Row>
-            </Card.Body>
-        </Card>
+            </Row>
         </>
     )
 }

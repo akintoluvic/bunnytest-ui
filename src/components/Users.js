@@ -7,7 +7,7 @@ const Users = () => {
     return (
         <>
             <div>Users</div>
-        <Row className="flex flex-col md:flex-row md:row-wrap col-md-12">
+        <Row className="flex flex-col md:flex-row md:flex-wrap col-md-12">
                     <User />
                     <User />
                     <User />

@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card'
 
 const Task = () => {
     return (
-        <Col className="mx-2" style={{ maxWidth: '18rem' }}>
-            <Card border="primary mb-4" style={{ width: '18rem' }}>
+        <Col className="w-full col-lg-3">
+            <Card border="primary mb-4" style={{ minWidth: '12rem' }}>
                 <Card.Header>Header</Card.Header>
                 <Card.Body>
                     <Card.Title>Primary Card Title</Card.Title>
