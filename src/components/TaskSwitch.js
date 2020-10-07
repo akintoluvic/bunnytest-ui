@@ -6,7 +6,7 @@ const TaskSwitch = () => {
     const handleSelect = (eventKey) => alert(`selected ${eventKey}`)
 
     return (
-        <Nav className="bg-dark rounded" variant="pills" activeKey="2" onSelect={handleSelect}>
+        <Nav className="bg-white rounded" variant="pills" activeKey="1" onSelect={handleSelect}>
             <Nav.Item>
                 <Nav.Link className="rounded-top" eventKey="1" href="#">
                 All Tasks

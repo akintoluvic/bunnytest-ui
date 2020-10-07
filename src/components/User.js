@@ -7,15 +7,13 @@ import avatar from "../assets/avatar.png";
 const User = () => {
     return (
         <Col className="md:w-full col-lg-3">
-            <Card border="primary mb-4 border" style={{ minWidth: '14rem' }}>
+            <Card border="0 mb-4" style={{ minWidth: '14rem' }}>
                 <Card.Img className="rounded-circle p-4" variant="top" src={avatar} />
                 <Card.Body className="text-center mt-n4">
                     <Card.Title>Randy Author</Card.Title>
-                    <Card.Text>
-                        Some quick example.
-                    </Card.Text>
-                    <Button variant="primary" className="w-75 mb-3">Update</Button>
-                    <Button variant="danger" className="w-75">Delete</Button>
+                    <Button variant="danger" className="">View</Button>
+                    <Button variant="primary" className="mx-2">Edit</Button>
+                    <Button variant="danger" className="">Delete</Button>
                 </Card.Body>
             </Card>
         </Col>
