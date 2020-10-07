@@ -10,7 +10,7 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App bg-light">
+    <div className="App bg-light" style={{height: "100vh", overflowY: "scroll"}}>
       <Navbar />
       <Container>
       <Switch>
