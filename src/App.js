@@ -1,7 +1,5 @@
 import React from 'react'
-import { Switch, Route, withRouter, useRouteMatch, useParams } from 'react-router-dom'
-import Container from 'react-bootstrap/Container'
-import Navbar from './components/Navbar'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import UserTasks from './components/UserTasks'
 import Tasks from './components/Tasks'
 import Users from './components/Users'
