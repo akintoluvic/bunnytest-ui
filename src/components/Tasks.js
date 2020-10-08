@@ -1,7 +1,5 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Task from './Task'
 import TaskSwitch from './TaskSwitch'
