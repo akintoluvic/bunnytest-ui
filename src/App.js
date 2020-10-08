@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
+import { QueryCache, ReactQueryCacheProvider } from "react-query";
 import UserTasks from './components/UserTasks'
 import Tasks from './components/Tasks'
 import Users from './components/Users'
@@ -12,8 +13,11 @@ const users = [
   {id: 123769, name: "Adoure John"}
 ]
 
+const queryCache = new QueryCache();
+
 function App() {
   return (
+    <ReactQueryCacheProvider queryCache={queryCache}>
     <div className="App bg-light" style={{height: "100vh", overflowY: "scroll"}}>
       
         <Switch>
@@ -28,6 +32,7 @@ function App() {
           </Route>
         </Switch>
     </div>
+    </ReactQueryCacheProvider>
   );
 }
 
