@@ -6,7 +6,13 @@ import UserTasks from './components/UserTasks'
 import Tasks from './components/Tasks'
 import Users from './components/Users'
 
-// const users
+const users = [
+  {id: 123765, name: "Ajoure John"},
+  {id: 123766, name: "Bjoure John"},
+  {id: 123767, name: "Cjoure John"},
+  {id: 123768, name: "Djoure John"},
+  {id: 123769, name: "Adoure John"}
+]
 
 function App() {
   return (
@@ -15,7 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Navbar text="Create User" />
-            <Users />
+            <Users users={users} />
           </Route>
           <Route path="/users/:id">
             <Navbar text="Create Task" />

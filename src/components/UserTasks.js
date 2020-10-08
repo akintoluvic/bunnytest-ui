@@ -2,36 +2,23 @@ import React from 'react'
 import { Switch, Route, withRouter, useRouteMatch, useParams } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
-import Task from './Task'
+import Tasks from './Tasks'
 import TaskSwitch from './TaskSwitch'
 
-const Tasks = () => {
+const UserTasks = () => {
 
     let { id } = useParams();
     console.log(id)
+
     return (
         <Container>
-            <Row className="mt-5 mb-4 d-flex flex-row flex-wrap justify-content-center justify-content-md-between align-items-center">
-                <h3 className="pb-3 md:pb-0">User name</h3>
+            <Row className="mt-5 mb-4 px-4 d-flex flex-sm-col flex-md-row flex-wrap justify-content-between align-items-md-center">
+                <h3 className="mb-3 md:mb-0 mr-4">User name</h3>
                 <TaskSwitch />
             </Row>
-            
-            <Row className="mx-n4 flex flex-row flex-wrap px-auto">
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-                    <Task />
-            </Row>
+            <Tasks />
         </Container>
     )
 }
 
-export default Tasks
+export default UserTasks
