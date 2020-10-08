@@ -11,15 +11,16 @@ function App() {
   return (
     <div className="App bg-light" style={{height: "100vh", overflowY: "scroll"}}>
       <Navbar />
+      <a href="/users">Users</a>
       <Container>
         <Switch>
-          <Route path="/users">
-            <Tasks />
-          </Route>
-          <Route path="/">
+          
+          <Route exact path="/users">
             <Users />
           </Route>
-          
+          <Route path="/">
+            <Tasks />
+          </Route>
         </Switch>
       </Container>
     </div>
