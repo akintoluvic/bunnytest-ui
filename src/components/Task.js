@@ -18,7 +18,8 @@ const Task = () => {
                         Some quick example text to build on the card title and make up the bulk
                         of the card's content.
                     </Card.Text>
-                    <Button variant="danger" className="btn-sm">Mark complete</Button>
+                    <Button variant="primary" className="btn-sm">Update</Button>
+                    <Button variant="danger" className="btn-sm ml-2">Mark complete</Button>
 
                 </Card.Body>
             </Card>

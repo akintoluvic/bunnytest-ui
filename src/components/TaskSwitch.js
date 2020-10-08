@@ -7,14 +7,14 @@ const TaskSwitch = () => {
     const handleSelect = (eventKey) => alert(`selected ${eventKey}`)
 
     return (
-        <Nav className="rounded" variant="pills" activeKey="2" onSelect={handleSelect}>
+        <Nav className="bg-white rounded" variant="pills" activeKey="2" onSelect={handleSelect}>
             <Nav.Item>
-                <Nav.Link className="rounded-top" eventKey="1" href="#">
+                <Nav.Link eventKey="1" href="#">
                 All Tasks
                 </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link className="" eventKey="2" title="todo">
+                <Nav.Link eventKey="2" title="todo">
                 Todo
                 </Nav.Link>
             </Nav.Item>
