@@ -17,9 +17,7 @@ const Users = () => {
                 <User />
                 <User />
                 <User />
-                
             </Row>
-            
         </>
     )
 }
