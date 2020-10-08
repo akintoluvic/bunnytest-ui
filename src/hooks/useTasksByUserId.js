@@ -3,11 +3,11 @@ import axios from "axios";
 
 const getUserTasksByUserId = async (_, userId) => {
   const { data } = await axios.get(
-    `http://localhost:5000/api/v1/tasks/${userId}`
+    `http://localhost:5000/api/v1/tasks/user/${userId}`
   );
   return data;
 };
 
-export default function usePost(userId) {
+export default function useTasksByUserId(userId) {
   return useQuery(["user", userId], getUserTasksByUserId);
 }
