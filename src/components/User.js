@@ -16,7 +16,7 @@ const User = ({user}) => {
             </span>
             
             <span className="">
-                <LinkContainer to={`users/${user.id}`}>
+                <LinkContainer to={`users/${user._id}`}>
                     <Button variant="primary" className="btn-sm">View</Button>
                 </LinkContainer>
                 <Button variant="warning" className="btn-sm mx-2">Edit</Button>

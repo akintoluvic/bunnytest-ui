@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useQueryCache } from "react-query";
-import useTasks from "../hooks/useTasks";
+import useTasksByUserId from "../hooks/useTasksByUserId";
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Tasks from './Tasks'
 import TaskSwitch from './TaskSwitch'
 import Navbar from './Navbar'
-import CreateUser from './CreateUser'
+import CreateTask from './CreateTask'
 
 const UserTasks = () => {
-    const cache = useQueryCache();
-    const { status, data, error, isFetching } = useTasks();
-    if(status !== "loading") {console.log(data)}
-
     let { id } = useParams();
+    console.log(id)
+    const cache = useQueryCache();
+    const { status, data, error, isFetching } = useTasksByUserId(id);
+    if(status !== "loading" || "error") {console.log(data)}
+
     
-    console.log(cache.getQueryData(["users", "5f7f53689bf5b602e08ffa47"]))
+    
+    // console.log(cache.getQueryData(["users", id]))
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -24,8 +26,8 @@ const UserTasks = () => {
 
     return (
         <>
-            <Navbar text="Create User" handleShow={handleShow} >
-                <CreateUser show={show} handleClose={handleClose} />
+            <Navbar text="Create Task" handleShow={handleShow} >
+                <CreateTask userid={id} show={show} handleClose={handleClose} />
             </Navbar>
             <Container>
                 <Row className="mt-5 mb-4 px-4 d-flex flex-sm-col flex-md-row flex-wrap justify-content-between align-items-md-center">

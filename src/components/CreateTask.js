@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { useQueryCache } from "react-query";
-import {createUser} from "../helpers/createUser";
+import {createTask} from "../helpers/createTask";
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const CreateUser = ({ show, handleClose}) => {
+const CreateUser = ({ userid, show, handleClose}) => {
     const [state, setstate] = useState('')
+    const [description, setdescription] = useState('')
 
     const cache = useQueryCache();
     const handleSubmit = () => {
-        createUser({name: state})
-        handleClose()
+        createTask({state: state, description: description, userid: userid})
     }
     
     
@@ -29,16 +29,21 @@ const CreateUser = ({ show, handleClose}) => {
                          required
                         />
                     </Form.Group>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Control type="text" placeholder="Enter user's name"
+                        value={description}
+                         onChange={e => setdescription(e.target.value)}
+                         required
+                        />
+                    </Form.Group>
                 </Form>
             </Modal.Body>
-            
-            
             <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
                 Close
             </Button>
             <Button variant="primary" onClick={handleSubmit}>
-                Create User
+                Create Task
             </Button>
             </Modal.Footer>
       </Modal>

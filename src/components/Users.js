@@ -25,7 +25,13 @@ const Users = ({ users }) => {
             <Container>
                 <h3 className="mt-4 mt-md-5 mb-4 sm:text-center">All Users</h3>
                 <Row className="px-3">
-                    {users.map(user => <User user={user} />)}
+                    {status === "loading" ? (
+                    "Loading..."
+                    ) : status === "error" ? (
+                    <span>Error: {error.message}</span>
+                    ) :
+                    data.data.map(user => <User key={user._id} user={user} />)
+                    }
                 </Row>
             </Container>
         </>

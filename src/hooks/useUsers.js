@@ -11,3 +11,15 @@ const getUsers = async () => {
 export default function useTasks() {
   return useQuery("users", getUsers);
 }
+
+const deleteUserId = async (userId) => {
+  console.log(userId)
+  const { data } = await axios.delete(
+    `http://localhost:5000/api/v1/tasks/user/${userId}`
+  );
+  return data;
+};
+
+export function useDeleteUserId(userId) {
+  return useQuery(["user", userId], deleteUserId);
+}
