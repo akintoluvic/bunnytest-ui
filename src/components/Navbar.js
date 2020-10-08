@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import { Nav } from 'react-bootstrap'
-import CreateUser from './CreateUser'
 
 
-const TopNav = ({text}) => {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+const TopNav = ({text, children, handleShow}) => {
     return (
         <Navbar bg="primary" variant="dark" expand="lg">
             <Container>
@@ -18,7 +13,7 @@ const TopNav = ({text}) => {
                     <Nav className="ml-auto">
                         <Button variant="" className="btn-light" onClick={handleShow}>{text}</Button>
                     </Nav>
-                    <CreateUser handleClose={handleClose} show={show} />
+                    {children}
             </Container>
         </Navbar>
     )

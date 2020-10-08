@@ -20,11 +20,9 @@ function App() {
       
         <Switch>
           <Route exact path="/">
-            <Navbar text="Create User" />
             <Users users={users} />
           </Route>
           <Route path="/users/:id">
-            <Navbar text="Create Task" />
             <UserTasks />
           </Route>
           <Route path="/tasks">
