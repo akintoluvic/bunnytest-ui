@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useQueryCache } from "react-query";
+import { useQueryCache, useQuery } from "react-query";
 import {createUser} from "../helpers/createUser";
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
@@ -12,6 +12,7 @@ const CreateUser = ({ show, handleClose}) => {
     const handleSubmit = () => {
         createUser({name: state})
         handleClose()
+        // let data = useQuery("users")
     }
     
     

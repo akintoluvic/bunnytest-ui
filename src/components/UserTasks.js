@@ -11,7 +11,6 @@ import CreateTask from './CreateTask'
 
 const UserTasks = () => {
     let { id } = useParams();
-    console.log(id)
     const cache = useQueryCache();
     const { status, data, error, isFetching } = useTasksByUserId(id);
     if(status !== "loading" || "error") {console.log(data)}

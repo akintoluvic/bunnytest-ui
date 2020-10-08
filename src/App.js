@@ -13,7 +13,13 @@ const users = [
   {id: 123769, name: "Adoure John"}
 ]
 
-const queryCache = new QueryCache();
+const queryCache = new QueryCache({
+  defaultConfig: {
+    queries: {
+      refetchOnWindowFocus: true,
+    },
+  },
+})
 
 function App() {
   return (
