@@ -1,7 +1,5 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 import Navbar from './components/Navbar'
 import Tasks from './components/Tasks'
 import Users from './components/Users'
@@ -17,11 +15,8 @@ function App() {
         <Route exact path="/users">
           <Users />
         </Route>
-        <Route exact path="/tasks">
-          <Tasks />
-        </Route>
         <Route exact path="/">
-          <div>Home</div>
+          <Tasks />
         </Route>
       </Switch>
       </Container>
