@@ -12,10 +12,10 @@ function App() {
       <Navbar />
       <Container>
         <Switch>
-          <Route path="/">
+          <Route path="/users">
             <Tasks />
           </Route>
-          <Route exact path="/users">
+          <Route path="/">
             <Users />
           </Route>
           
