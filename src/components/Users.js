@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 import User from './User'
+import CreateUser from './CreateUser'
 
 const Users = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
-        <>
-            <Row className="mt-5 mb-4 flex flex-row flex-wrap justify-content-between align-items-center">
+        <Container>
+            <Row className="mt-5 mb-4 flex flex-wrap justify-content-between align-items-center">
                 <h3>All Users</h3>
-                <Button variant="primary" className="">Create User</Button>
+                <Button variant="primary" className="" onClick={handleShow}>Create User</Button>
+                <CreateUser handleClose={handleClose} show={show} />
             </Row>
-            <Row className="flex flex-row flex-wrap">
+            <Row className="">
                 <User />
                 <User />
                 <User />
@@ -18,7 +25,7 @@ const Users = () => {
                 <User />
                 <User />
             </Row>
-        </>
+        </Container>
     )
 }
 

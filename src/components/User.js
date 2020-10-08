@@ -1,22 +1,31 @@
 import React from 'react'
+import { Switch, Route, withRouter, useRouteMatch, useParams } from 'react-router-dom'
 import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import { LinkContainer } from 'react-router-bootstrap'
 import avatar from "../assets/avatar.png";
 
 const User = () => {
+
+    let match = useRouteMatch();
     return (
-        <Col className="md:w-full col-lg-3">
-            <Card border="0 mb-4 rounded-lg" style={{ minWidth: '14rem' }}>
-                <Card.Img className="rounded-circle p-4" variant="top" src={avatar} />
-                <Card.Body className="text-center mt-n4">
-                    <Card.Title>Randy Author</Card.Title>
+
+        <Row className="w-100 px-3 pb-1 pt-3 mb-2 bg-white mx-auto d-flex flex-row align-items-center justify-content-between">
+            <span className="d-flex">
+            <img className="rounded-circle mr-2" variant="top" height="25" src={avatar} />
+            <Card.Title>Randy Author</Card.Title>
+            </span>
+            
+            <span className="">
+                <LinkContainer to={`users/4`}>
                     <Button variant="primary" className="btn-sm">View</Button>
-                    <Button variant="" className="text-primary mx-2">Edit</Button>
-                    <Button variant="" className="text-danger">Delete</Button>
-                </Card.Body>
-            </Card>
-        </Col>
+                </LinkContainer>
+                <Button variant="warning" className="btn-sm mx-2">Edit</Button>
+                <Button variant="danger" className="btn-sm">Delete</Button>
+            </span>
+        </Row>
     )
 }
 

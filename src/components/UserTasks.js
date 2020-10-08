@@ -6,6 +6,9 @@ import Task from './Task'
 import TaskSwitch from './TaskSwitch'
 
 const Tasks = () => {
+
+    let { id } = useParams();
+    console.log(id)
     return (
         <Container>
             <Row className="mt-5 mb-4 d-flex flex-row flex-wrap justify-content-center justify-content-md-between align-items-center">

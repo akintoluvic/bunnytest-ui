@@ -22,11 +22,6 @@ const TaskSwitch = () => {
                 Done
                 </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="3" title="done">
-                Create New
-                </Nav.Link>
-            </Nav.Item>
         </Nav>
     )
 }
