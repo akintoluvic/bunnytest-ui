@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Navbar from './components/Navbar'
 import Tasks from './components/Tasks'
 import Users from './components/Users'
-import { Switch, Route, withRouter } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Container>
         <Switch>
-          <Route path="/users">
+          <Route exact path="/users">
             <Users />
           </Route>
           <Route path="/">
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default withRouter(App)
+export default App
