@@ -7,7 +7,10 @@ import TaskSwitch from './TaskSwitch'
 import Navbar from './Navbar'
 import CreateUser from './CreateUser'
 
-const UserTasks = () => {
+const UserTasks = ({ users }) => {
+
+    const userName = Object.keys(users)
+  .filter(id => users.includes(id))
 
     let { id } = useParams();
     console.log(id)
@@ -23,7 +26,7 @@ const UserTasks = () => {
             </Navbar>
             <Container>
                 <Row className="mt-5 mb-4 px-4 d-flex flex-sm-col flex-md-row flex-wrap justify-content-between align-items-md-center">
-                    <h3 className="mb-3 md:mb-0 mr-4">User name</h3>
+                    <h3 className="mb-3 md:mb-0 mr-4">{ userName }</h3>
                     <TaskSwitch />
                 </Row>
                 <Tasks />

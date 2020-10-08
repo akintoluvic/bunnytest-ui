@@ -21,7 +21,7 @@ function App() {
             <Users users={users} />
           </Route>
           <Route path="/users/:id">
-            <UserTasks />
+            <UserTasks users={users} />
           </Route>
           <Route path="/tasks">
             <Tasks />
