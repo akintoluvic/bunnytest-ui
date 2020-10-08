@@ -5,11 +5,9 @@ import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 
 const Task = ({task}) => {
-    console.log(task)
     return (
         <Col className="w-full col-lg-3">
             <Card bg="white mb-4" style={{ minWidth: '12rem', minHeight: '11rem' }}>
-                {/* <Card.Header> </Card.Header> */}
                 <Card.Body>
                     <Card.Title>
                         <Badge variant="warning">{task.state}</Badge>

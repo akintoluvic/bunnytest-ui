@@ -15,8 +15,8 @@ const UserTasks = () => {
     if(status !== "loading") {console.log(data)}
 
     let { id } = useParams();
-    console.log(status)
-
+    
+    console.log(cache.getQueryData(["users", "5f7f53689bf5b602e08ffa47"]))
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -29,7 +29,9 @@ const UserTasks = () => {
             </Navbar>
             <Container>
                 <Row className="mt-5 mb-4 px-4 d-flex flex-sm-col flex-md-row flex-wrap justify-content-between align-items-md-center">
-                    <h3 className="mb-3 md:mb-0 mr-4">User Tasks</h3>
+                    <h3 className="mb-3 md:mb-0 mr-4">
+                        UserTasks
+                    </h3>
                     <TaskSwitch />
                 </Row>
                 {status === "loading" ? (
