@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Navbar from './Navbar'
 import User from './User'
-import CreateUser from './CreateUser'
+import CreateUser from './modals/CreateUser'
 
 const Users = ({ users }) => {
     const cache = useQueryCache();

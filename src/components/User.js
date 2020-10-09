@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -6,6 +7,20 @@ import { LinkContainer } from 'react-router-bootstrap'
 import avatar from "../assets/avatar.png";
 
 const User = ({user}) => {
+    const userbaseUrl = "http://localhost:5001/api/v1/users"
+    const taskbaseUrl = "http://localhost:5000/api/v1/tasks/user"
+
+    const deleteUser = async () => {
+        const requestOne = axios.delete(`${userbaseUrl}/${user._id}`);
+        const requestTwo = axios.delete(`${taskbaseUrl}/${user._id}`);
+        
+        try {
+        //   await axios.delete(`${baseUrl}1/api/v1/users/${user._id}`);
+          await axios.all([requestOne, requestTwo])
+        } catch (err) {
+
+        }
+    }
 
     return (
 
@@ -20,7 +35,7 @@ const User = ({user}) => {
                     <Button variant="primary" className="btn-sm">View</Button>
                 </LinkContainer>
                 <Button variant="warning" className="btn-sm mx-2">Edit</Button>
-                <Button variant="danger" className="btn-sm">Delete</Button>
+                <Button variant="danger" className="btn-sm" onClick={ () => deleteUser()}>Delete</Button>
             </span>
         </Row>
     )

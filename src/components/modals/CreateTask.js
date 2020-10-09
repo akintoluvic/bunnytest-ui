@@ -5,13 +5,14 @@ import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const CreateUser = ({ userid, show, handleClose}) => {
-    const [state, setstate] = useState('')
+const CreateUser = ({ userid, show, handleClose }) => {
+    const [state, setstate] = useState('todo')
     const [description, setdescription] = useState('')
 
     const cache = useQueryCache();
     const handleSubmit = () => {
         createTask({state: state, description: description, userid: userid})
+        handleClose()
     }
     
     
