@@ -1,17 +1,8 @@
 import React from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { QueryCache, ReactQueryCacheProvider } from "react-query";
-import UserTasks from './components/UserTasks'
-import Tasks from './components/Tasks'
-import Users from './components/Users'
-
-const users = [
-  {id: 123765, name: "Ajoure John"},
-  {id: 123766, name: "Bjoure John"},
-  {id: 123767, name: "Cjoure John"},
-  {id: 123768, name: "Djoure John"},
-  {id: 123769, name: "Adoure John"}
-]
+import UserTasks from './components/views/UserTasks'
+import Users from './components/views/Users'
 
 const queryCache = new QueryCache({
   defaultConfig: {
@@ -28,13 +19,10 @@ function App() {
       
         <Switch>
           <Route exact path="/">
-            <Users users={users} />
+            <Users />
           </Route>
           <Route path="/users/:id">
-            <UserTasks users={users} />
-          </Route>
-          <Route path="/tasks">
-            <Tasks />
+            <UserTasks />
           </Route>
         </Switch>
     </div>

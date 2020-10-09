@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import UpdateTask from './modals/UpdateTask'
+import UpdateTask from '../modals/UpdateTask'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Badge from 'react-bootstrap/Badge'

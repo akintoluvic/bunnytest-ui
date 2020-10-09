@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useQueryCache } from "react-query";
 import {updateTask} from "../helpers/updateTask";
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
@@ -9,7 +8,6 @@ const CreateUser = ({ task, show, handleClose }) => {
     const [state, setstate] = useState(task.state)
     const [description, setdescription] = useState(task.description)
 
-    const cache = useQueryCache();
     const handleSubmit = () => {
         updateTask({state: state, description: description, _id: task._id })
         handleClose()

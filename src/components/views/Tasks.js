@@ -3,12 +3,9 @@ import Row from 'react-bootstrap/Row'
 import Task from './Task'
 
 const Tasks = ({ tasks }) => {
-        console.log(tasks)
     return (
             <Row className=" flex flex-row flex-wrap px-auto">
-                   {
-                    tasks.map(task => <Task task={task} />)
-                    }
+                   { tasks.map(task => <Task key={task._id} task={task} />) }
             </Row>
     )
 }

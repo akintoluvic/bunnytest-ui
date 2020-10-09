@@ -7,8 +7,8 @@ import Container from 'react-bootstrap/Container'
 import Tasks from './Tasks'
 import Navbar from './Navbar'
 import Button from 'react-bootstrap/Button'
-import CreateTask from './modals/CreateTask'
-import {taskbaseUrl} from "../baseUrl"
+import CreateTask from '../modals/CreateTask'
+import {taskbaseUrl} from "../../baseUrl"
 
 const UserTasks = () => {
     const [tasks, settasks] = useState([])
@@ -18,17 +18,18 @@ const UserTasks = () => {
         try {
           const response = await axios.get(`${taskbaseUrl}/user/${id}`);
           settasks(response.data.data);
-          console.log(response.data.data)
         } catch (err) {
     
         }
       }
 
+      
       useEffect(() => {
         getUserTasks();
-      }, []);
+      }, 
+      // eslint-disable-next-line
+      []);
     
-    // console.log(cache.getQueryData(["users", id]))
 
     const [show, setShow] = useState(false);
     const handleClose = () => {

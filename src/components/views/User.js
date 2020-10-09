@@ -4,8 +4,8 @@ import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { LinkContainer } from 'react-router-bootstrap'
-import avatar from "../assets/avatar.png";
-import {userbaseUrl, taskbaseUrl} from "../baseUrl"
+import avatar from "../../assets/avatar.png";
+import {userbaseUrl, taskbaseUrl} from "../../baseUrl"
 
 const User = ({user}) => {
 

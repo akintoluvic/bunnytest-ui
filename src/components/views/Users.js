@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
-import { useQueryCache } from "react-query";
-import useUsers from "../hooks/useUsers";
+import useUsers from "../../hooks/useUsers";
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Navbar from './Navbar'
 import User from './User'
-import CreateUser from './modals/CreateUser'
+import CreateUser from '../modals/CreateUser'
 
-const Users = ({ users }) => {
-    const cache = useQueryCache();
-    const { status, data, error, isFetching } = useUsers();
-
-    console.log(data)
+const Users = () => {
+    const { status, data, error } = useUsers();
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
