@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from "axios"
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import UpdateUser from "../modals/UpdateUser"
 import { LinkContainer } from 'react-router-bootstrap'
 import avatar from "../../assets/avatar.png";
 import {userbaseUrl, taskbaseUrl} from "../../baseUrl"
@@ -11,15 +12,18 @@ const User = ({user}) => {
 
     const deleteUser = async () => {
         const requestOne = axios.delete(`${userbaseUrl}/${user._id}`);
-        const requestTwo = axios.delete(`${taskbaseUrl}/user/${user._id}`);
-        
-        try {
-        //   await axios.delete(`${baseUrl}1/api/v1/users/${user._id}`);
-          await axios.all([requestOne, requestTwo])
-        } catch (err) {
-
+            const requestTwo = axios.delete(`${taskbaseUrl}/user/${user._id}`);
+            try {
+            await axios.all([requestOne, requestTwo])
+            } catch (err) {}
         }
-    }
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => {
+        // updateUser()
+        setShow(false)
+    };
+    const handleShow = () => setShow(true);
 
     return (
 
@@ -33,7 +37,9 @@ const User = ({user}) => {
                 <LinkContainer to={`users/${user._id}`}>
                     <Button variant="primary" className="btn-sm">View</Button>
                 </LinkContainer>
-                <Button variant="warning" className="btn-sm mx-2">Edit</Button>
+                <Button variant="warning" className="btn-sm mx-2"  onClick={() => handleShow()}>Edit</Button>
+                <UpdateUser user={user} show={show} handleClose={handleClose} />
+
                 <Button variant="danger" className="btn-sm" onClick={ () => deleteUser()}>Delete</Button>
             </span>
         </Row>

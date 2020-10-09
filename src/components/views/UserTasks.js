@@ -49,7 +49,7 @@ const UserTasks = () => {
                         UserTasks
                     </h3>
                     
-                    <LinkContainer to="/">
+                    <LinkContainer to="/" className="mb-3 md:mb-0 mr-4">
                         <Button variant="primary" className="btn-sm">Back to Users</Button>
                     </LinkContainer>
                 </Row>
