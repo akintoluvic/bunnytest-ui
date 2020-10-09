@@ -17,7 +17,7 @@ const CreateUser = ({ userid, show, handleClose }) => {
     return (
         <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
-            <Modal.Title>Enter user's name</Modal.Title>
+            <Modal.Title>Create task</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
