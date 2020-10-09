@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { useParams } from 'react-router-dom'
-import { useQueryCache } from "react-query";
-import useTasksByUserId from "../hooks/useTasksByUserId";
+import { LinkContainer } from 'react-router-bootstrap'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import Tasks from './Tasks'
-import TaskSwitch from './TaskSwitch'
 import Navbar from './Navbar'
+import Button from 'react-bootstrap/Button'
 import CreateTask from './modals/CreateTask'
+import {taskbaseUrl} from "../baseUrl"
 
 const UserTasks = () => {
     const [tasks, settasks] = useState([])
     let { id } = useParams();
-    const cache = useQueryCache();
-    const { status, data, error, isFetching } = useTasksByUserId(id);
-    if(status !== "loading" || "error") {console.log(data)}
 
     const getUserTasks = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/v1/tasks/user/${id}`);
+          const response = await axios.get(`${taskbaseUrl}/user/${id}`);
           settasks(response.data.data);
           console.log(response.data.data)
         } catch (err) {
@@ -50,7 +47,10 @@ const UserTasks = () => {
                     <h3 className="mb-3 md:mb-0 mr-4">
                         UserTasks
                     </h3>
-                    <TaskSwitch />
+                    
+                    <LinkContainer to="/">
+                        <Button variant="primary" className="btn-sm">Back to Users</Button>
+                    </LinkContainer>
                 </Row>
                 {tasks === [] ? (
                     "Loading..."

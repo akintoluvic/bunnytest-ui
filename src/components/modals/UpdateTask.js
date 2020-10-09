@@ -23,14 +23,14 @@ const CreateUser = ({ task, show, handleClose }) => {
             <Modal.Body>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Enter user's name"
+                        <Form.Control type="text" placeholder="Task status"
                         value={state}
                          onChange={e => setstate(e.target.value)}
                          required
                         />
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Enter user's name"
+                        <Form.Control type="text" placeholder="Task description"
                         value={description}
                          onChange={e => setdescription(e.target.value)}
                          required

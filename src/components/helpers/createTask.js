@@ -1,8 +1,9 @@
 import axios from "axios";
+import { taskbaseUrl } from "../../baseUrl"
 
 export const createTask = async (task) => {
   const data = await axios.post(
-    "http://localhost:5000/api/v1/tasks/", 
+    `${taskbaseUrl}`, 
     task
   )
   return data;

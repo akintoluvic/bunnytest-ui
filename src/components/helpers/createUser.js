@@ -1,8 +1,9 @@
 import axios from "axios";
+import { userbaseUrl } from "../../baseUrl"
 
 export const createUser = async (user) => {
   const data = await axios.post(
-    "http://localhost:5001/api/v1/users/", 
+    `${userbaseUrl}`, 
     user
   )
   return data;
