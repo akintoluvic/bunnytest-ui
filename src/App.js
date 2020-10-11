@@ -6,26 +6,23 @@ import Users from './components/views/Users'
 
 const queryCache = new QueryCache({
   defaultConfig: {
-    queries: {
-      refetchOnWindowFocus: true,
-    },
+    queries: {  refetchOnWindowFocus: true, },
   },
 })
 
 function App() {
   return (
     <ReactQueryCacheProvider queryCache={queryCache}>
-    <div className="App bg-light" style={{height: "100vh", overflowY: "scroll"}}>
-      
-        <Switch>
-          <Route exact path="/">
-            <Users />
-          </Route>
-          <Route path="/users/:id">
-            <UserTasks />
-          </Route>
-        </Switch>
-    </div>
+      <div className="App bg-light" style={{height: "100vh", overflowY: "scroll"}}>
+          <Switch>
+            <Route exact path="/">
+              <Users />
+            </Route>
+            <Route path="/users/:id">
+              <UserTasks />
+            </Route>
+          </Switch>
+      </div>
     </ReactQueryCacheProvider>
   );
 }
