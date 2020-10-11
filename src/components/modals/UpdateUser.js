@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {updateUser} from "../helpers/updateUser";
+import {updateUser} from "../axios/updateUser";
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'

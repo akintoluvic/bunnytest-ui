@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
+import {getUserTasks} from "../axios/userTasks"
 import { useParams } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import Row from 'react-bootstrap/Row'
@@ -14,18 +15,13 @@ const UserTasks = () => {
     const [tasks, settasks] = useState([])
     let { id } = useParams();
 
-    const getUserTasks = async () => {
-        try {
-          const response = await axios.get(`${taskbaseUrl}/user/${id}`);
-          settasks(response.data.data);
-        } catch (err) {
     
-        }
-      }
-
       
       useEffect(() => {
-        getUserTasks();
+        settasks(getUserTasks(id))
+        
+        const data = getUserTasks(id)
+        console.log(data)
       }, 
       // eslint-disable-next-line
       []);
@@ -34,7 +30,7 @@ const UserTasks = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => {
         setShow(false)
-        getUserTasks()
+        settasks(getUserTasks(id))
     };
     const handleShow = () => setShow(true);
 
@@ -53,7 +49,7 @@ const UserTasks = () => {
                         <Button variant="primary" className="btn-sm">Back to Users</Button>
                     </LinkContainer>
                 </Row>
-                {tasks === [] ? (
+                {tasks.length === 0 ? (
                     "Loading..."
                     ) : 
                     <Tasks tasks={tasks}/>

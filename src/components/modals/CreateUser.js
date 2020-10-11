@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {createUser} from "../helpers/createUser";
+import {createUser} from "../axios/createUser";
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
