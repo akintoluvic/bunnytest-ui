@@ -17,7 +17,7 @@ const Task = ({task}) => {
 
     return (
         <Col className="w-full col-lg-3">
-            <Card bg="white mb-4" style={{ minWidth: '12rem', minHeight: '11rem' }}>
+            <Card bg="light border-0 mb-4" style={{ minWidth: '12rem', minHeight: '11rem' }}>
                 <Card.Body>
                     <Card.Title>
                         <Badge variant="warning">{task.state}</Badge>

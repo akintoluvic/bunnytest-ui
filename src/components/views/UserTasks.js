@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-import {getUserTasks} from "../axios/userTasks"
 import { useParams } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import Row from 'react-bootstrap/Row'
@@ -9,28 +8,29 @@ import Tasks from './Tasks'
 import Navbar from './Navbar'
 import Button from 'react-bootstrap/Button'
 import CreateTask from '../modals/CreateTask'
-import {taskbaseUrl} from "../../baseUrl"
+import { taskbaseUrl } from "../../baseUrl"
 
 const UserTasks = () => {
     const [tasks, settasks] = useState([])
+    const [show, setShow] = useState(false);
     let { id } = useParams();
 
-    
-      
-      useEffect(() => {
-        settasks(getUserTasks(id))
-        
-        const data = getUserTasks(id)
-        console.log(data)
-      }, 
-      // eslint-disable-next-line
-      []);
-    
+    const getUserTasks = async () => {
+        try {
+            const response = await axios.get(`${taskbaseUrl}/user/${id}`);
+            settasks(response.data.data);
+        } catch (err) { }
+    }
 
-    const [show, setShow] = useState(false);
+    useEffect(() => {
+        getUserTasks()
+        console.log(tasks)
+        // eslint-disable-next-line
+    }, []);
+
     const handleClose = () => {
         setShow(false)
-        settasks(getUserTasks(id))
+        getUserTasks()
     };
     const handleShow = () => setShow(true);
 
@@ -41,19 +41,14 @@ const UserTasks = () => {
             </Navbar>
             <Container>
                 <Row className="mt-5 mb-4 px-4 d-flex flex-sm-col flex-md-row flex-wrap justify-content-between align-items-md-center">
-                    <h3 className="mb-3 md:mb-0 mr-4">
-                        UserTasks
-                    </h3>
-                    
-                    <LinkContainer to="/" className="mb-3 md:mb-0 mr-4">
-                        <Button variant="primary" className="btn-sm">Back to Users</Button>
+                    <h3 className="mb-3 md:mb-0 mr-4"> UserTasks </h3>
+
+                    <LinkContainer to="/" className="bg-primary border-0 mb-3 md:mb-0 mr-4">
+                        <Button variant="primary" className="btn- btn-sm">Back to Users</Button>
                     </LinkContainer>
                 </Row>
-                {tasks.length === 0 ? (
-                    "Loading..."
-                    ) : 
-                    <Tasks tasks={tasks}/>
-                    }
+                {tasks.length === 0 ? ("Loading...") :
+                    <Tasks tasks={tasks} />}
             </Container>
         </>
     )

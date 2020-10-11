@@ -15,7 +15,7 @@ const queryCache = new QueryCache({
 function App() {
   return (
     <ReactQueryCacheProvider queryCache={queryCache}>
-    <div className="App bg-light" style={{height: "100vh", overflowY: "scroll"}}>
+    <div className="App " style={{height: "100vh", overflowY: "scroll"}}>
       
         <Switch>
           <Route exact path="/">

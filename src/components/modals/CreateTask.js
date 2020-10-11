@@ -13,7 +13,6 @@ const CreateUser = ({ userid, show, handleClose }) => {
         handleClose()
     }
     
-    
     return (
         <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
