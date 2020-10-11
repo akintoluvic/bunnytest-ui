@@ -11,7 +11,7 @@ const TopNav = ({text, children, handleShow}) => {
             <Container>
                 <Navbar.Brand href="/">Bunny Tasks</Navbar.Brand>
                     <Nav className="ml-auto">
-                        <Button variant="" className="btn-light" onClick={handleShow}>{text}</Button>
+                        <Button variant="light" onClick={handleShow}>{text}</Button>
                     </Nav>
                     {children}
             </Container>

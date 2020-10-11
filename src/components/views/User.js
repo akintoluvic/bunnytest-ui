@@ -18,7 +18,7 @@ const User = ({user}) => {
 
     return (
 
-        <Row className="w-100 px-3 pb-1 pt-3 mb-2 bg-light mx-auto d-flex flex-row align-items-center justify-content-between">
+        <Row className="w-100 px-3 pb-1 pt-3 mb-2 bg-white rounded shado-sm mx-auto d-flex flex-row align-items-center justify-content-between">
             <span className="d-flex">
             <img className="rounded-circle mr-2" variant="top" height="25" src={avatar} alt="user avatar" />
             <Card.Title>{user.name}</Card.Title>

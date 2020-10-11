@@ -17,13 +17,13 @@ const Task = ({task}) => {
 
     return (
         <Col className="w-full col-lg-3">
-            <Card bg="light border-0 mb-4" style={{ minWidth: '12rem', minHeight: '11rem' }}>
+            <Card bg="white shadow-sm mb-4" style={{ minWidth: '12rem', minHeight: '11rem' }}>
                 <Card.Body>
                     <Card.Title>
-                        <Badge variant="warning">{task.state}</Badge>
+                        <Badge variant={`${task.state === "done" ? "success" : "warning"}`}>{task.state}</Badge>
                     </Card.Title>
                     <Card.Text>{task.description}</Card.Text>
-                    <Button variant="primary" className="btn-sm" onClick={() => handleShow()}>Update Task</Button>
+                    <Button variant="primary btn-sm" onClick={() => handleShow()}>Update Task</Button>
                     <UpdateTask task={task} show={show} handleClose={handleClose} />
 
                 </Card.Body>
