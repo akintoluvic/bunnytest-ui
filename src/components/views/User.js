@@ -24,7 +24,7 @@ const User = ({user}) => {
             <Card.Title>{user.name}</Card.Title>
             </span>
             
-            <span className="">
+            <span className="mb-2">
                 <LinkContainer to={`users/${user._id}`}>
                     <Button variant="primary" className="btn-sm">View</Button>
                 </LinkContainer>
